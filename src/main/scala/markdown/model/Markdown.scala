@@ -18,4 +18,4 @@ enum Inline:
   case Italic(content: List[Inline])
   case Code(value: String)
   case Link(text: List[Inline], url: String)
-  case Image(alt: String, url: String)   // ← НОВЫЙ вариант
+  case Image(alt: String, url: String)   

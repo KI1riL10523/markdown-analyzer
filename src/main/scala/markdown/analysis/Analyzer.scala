@@ -47,7 +47,7 @@ object Analyzer:
     case Block.CodeBlock(_, _) =>
       Stats.empty.copy(codeBlocks = 1)
 
-    case Block.Table(headers, rows) =>                  // ← НОВОЕ
+    case Block.Table(headers, rows) =>                  
       val headerStats = analyzeInlines(headers)
       val rowStats = rows.map(analyzeInlines).foldLeft(Stats.empty)(statsMonoid.combine)
       statsMonoid.combine(
@@ -78,7 +78,7 @@ object Analyzer:
     case Inline.Link(text, _) =>
       statsMonoid.combine(Stats.empty.copy(links = 1), analyzeInlines(text))
 
-    case Inline.Image(_, _) =>                           // ← НОВОЕ
+    case Inline.Image(_, _) =>                           
       Stats.empty.copy(images = 1)
 
   /** Извлекает весь текст из inline-элемента (рекурсивно). */
@@ -88,7 +88,7 @@ object Analyzer:
     case Inline.Italic(content) => content.map(extractText).mkString(" ")
     case Inline.Code(_)         => ""
     case Inline.Link(text, _)   => text.map(extractText).mkString(" ")
-    case Inline.Image(alt, _)   => alt                   // ← НОВОЕ
+    case Inline.Image(alt, _)   => alt                   
 
   /** Считает количество слов в inline-элементах. */
   private def countWords(inlines: List[Inline]): Int =
