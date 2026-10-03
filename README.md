@@ -183,3 +183,14 @@ java -jar markdown-analyzer.jar example.md output.html output.json
 - Экранирование — предобработка строки перед парсингом.
 - Многоуровневые списки — учёт отступов.
 - Стриминг — `ZStream` вместо `readFile`.
+
+## 🚀 Быстрый запуск
+
+### Вариант 1: Скачать готовый JAR
+
+1. Скачай [`releases/markdown-analyzer.jar`](releases/markdown-analyzer.jar).
+2. Убедись, что установлена **Java 21+** ([скачать](https://adoptium.net/)).
+3. Запусти:
+
+```bash
+java -jar markdown-analyzer.jar input.md output.html output.json
