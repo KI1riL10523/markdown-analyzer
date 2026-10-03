@@ -1,0 +1,29 @@
+# sbt
+target/
+project/target/
+project/project/
+.bsp/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VSCode
+.vscode/
+
+# Mac OS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Логи
+*.log
+
+# Временные файлы (генерируются программой)
+output.html
+output.json
+test.html
+test.json
